@@ -98,12 +98,12 @@ public class CarControllerTest {
          *   below (the vehicle will be the first in the list).
          */
         Car car = getCar();
-        mvc.perform(
-                post(new URI("/cars"))
-                        .content(json.write(car).getJson())
-                        .contentType(MediaType.APPLICATION_JSON_UTF8)
-                        .accept(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(status().isCreated());
+//        mvc.perform(
+//                post(new URI("/cars"))
+//                        .content(json.write(car).getJson())
+//                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+//                        .accept(MediaType.APPLICATION_JSON_UTF8))
+//                .andExpect(status().isCreated());
         mvc.perform(
                 get(new URI("/cars"))
                         .content(json.write(car).getJson())

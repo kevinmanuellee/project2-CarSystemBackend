@@ -4,6 +4,7 @@ import com.udacity.pricing.api.PricingController;
 import com.udacity.pricing.service.PricingService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -20,16 +21,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(PricingController.class)
-public class PricingTest {
+class PricingTest {
 
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
+    @Mock
     PricingService priceService;
 
     @Test
-    public void getDog() throws Exception {
+    public void getPrice() throws Exception {
         mockMvc.perform(get("/services/price?vehicleId=1"))
                 .andExpect(status().isOk());
 
